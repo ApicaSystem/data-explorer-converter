@@ -1,0 +1,368 @@
+{
+    "header": {
+        "dateTimeRange": true,
+        "dropdowns": []
+    },
+    "tabs": [
+        {
+            "key": "Go",
+            "order": "1",
+            "queriesList": [
+                {
+                    "chart_type": "line",
+                    "data_source_name": "Apica Monitoring",
+                    "name": "process memory - resident {{kubernetes_pod_name}} query",
+                    "options": {
+                        "description": "process memory - resident {{kubernetes_pod_name}} query",
+                        "order": 1,
+                        "plot": {
+                            "errorColumn": "",
+                            "groupBy": "",
+                            "x": "Timestamp",
+                            "xLabel": "Timestamp",
+                            "y": [
+                                "value"
+                            ],
+                            "yLabel": "value"
+                        },
+                        "upperLimit": ""
+                    },
+                    "query": "process_resident_memory_bytes{kubernetes_pod_name=~\"^$pod$\",app=~\"^$app$\"}&duration=1h&step=5m",
+                    "schema": ""
+                },
+                {
+                    "chart_type": "line",
+                    "data_source_name": "Apica Monitoring",
+                    "name": "process memory - virtual {{kubernetes_pod_name}} query",
+                    "options": {
+                        "description": "process memory - virtual {{kubernetes_pod_name}} query",
+                        "order": 2,
+                        "plot": {
+                            "errorColumn": "",
+                            "groupBy": "",
+                            "x": "Timestamp",
+                            "xLabel": "Timestamp",
+                            "y": [
+                                "value"
+                            ],
+                            "yLabel": "value"
+                        },
+                        "upperLimit": ""
+                    },
+                    "query": "process_virtual_memory_bytes{kubernetes_pod_name=~\"^$pod$\",app=~\"^$app$\"}&duration=1h&step=5m",
+                    "schema": ""
+                },
+                {
+                    "chart_type": "line",
+                    "data_source_name": "Apica Monitoring",
+                    "name": "process memory rate - resident {{kubernetes_pod_name}} query",
+                    "options": {
+                        "description": "process memory rate - resident {{kubernetes_pod_name}} query",
+                        "order": 3,
+                        "plot": {
+                            "errorColumn": "",
+                            "groupBy": "",
+                            "x": "Timestamp",
+                            "xLabel": "Timestamp",
+                            "y": [
+                                "value"
+                            ],
+                            "yLabel": "value"
+                        },
+                        "upperLimit": ""
+                    },
+                    "query": "rate(process_resident_memory_bytes{kubernetes_pod_name=~\"^$pod$\",app=~\"^$app$\"}[$interval])&duration=1h&step=5m",
+                    "schema": ""
+                },
+                {
+                    "chart_type": "line",
+                    "data_source_name": "Apica Monitoring",
+                    "name": "process memory rate - virtual {{kubernetes_pod_name}} query",
+                    "options": {
+                        "description": "process memory rate - virtual {{kubernetes_pod_name}} query",
+                        "order": 4,
+                        "plot": {
+                            "errorColumn": "",
+                            "groupBy": "",
+                            "x": "Timestamp",
+                            "xLabel": "Timestamp",
+                            "y": [
+                                "value"
+                            ],
+                            "yLabel": "value"
+                        },
+                        "upperLimit": ""
+                    },
+                    "query": "rate(process_virtual_memory_bytes{kubernetes_pod_name=~\"^$pod$\",app=~\"^$app$\"}[$interval])&duration=1h&step=5m",
+                    "schema": ""
+                },
+                {
+                    "chart_type": "line",
+                    "data_source_name": "Apica Monitoring",
+                    "name": "go memstats - bytes allocated {{kubernetes_pod_name}} query",
+                    "options": {
+                        "description": "go memstats - bytes allocated {{kubernetes_pod_name}} query",
+                        "order": 5,
+                        "plot": {
+                            "errorColumn": "",
+                            "groupBy": "",
+                            "x": "Timestamp",
+                            "xLabel": "Timestamp",
+                            "y": [
+                                "value"
+                            ],
+                            "yLabel": "value"
+                        },
+                        "upperLimit": ""
+                    },
+                    "query": "go_memstats_alloc_bytes{kubernetes_pod_name=~\"^$pod$\",app=~\"^$app$\"}&duration=1h&step=5m",
+                    "schema": ""
+                },
+                {
+                    "chart_type": "line",
+                    "data_source_name": "Apica Monitoring",
+                    "name": "go memstats - alloc rate {{kubernetes_pod_name}} query",
+                    "options": {
+                        "description": "go memstats - alloc rate {{kubernetes_pod_name}} query",
+                        "order": 6,
+                        "plot": {
+                            "errorColumn": "",
+                            "groupBy": "",
+                            "x": "Timestamp",
+                            "xLabel": "Timestamp",
+                            "y": [
+                                "value"
+                            ],
+                            "yLabel": "value"
+                        },
+                        "upperLimit": ""
+                    },
+                    "query": "rate(go_memstats_alloc_bytes_total{kubernetes_pod_name=~\"^$pod$\",app=~\"^$app$\"}[30s])&duration=1h&step=5m",
+                    "schema": ""
+                },
+                {
+                    "chart_type": "line",
+                    "data_source_name": "Apica Monitoring",
+                    "name": "go memstats - stack inuse {{kubernetes_pod_name}} query",
+                    "options": {
+                        "description": "go memstats - stack inuse {{kubernetes_pod_name}} query",
+                        "order": 7,
+                        "plot": {
+                            "errorColumn": "",
+                            "groupBy": "",
+                            "x": "Timestamp",
+                            "xLabel": "Timestamp",
+                            "y": [
+                                "value"
+                            ],
+                            "yLabel": "value"
+                        },
+                        "upperLimit": ""
+                    },
+                    "query": "go_memstats_stack_inuse_bytes{kubernetes_pod_name=~\"^$pod$\",app=~\"^$app$\"}&duration=1h&step=5m",
+                    "schema": ""
+                },
+                {
+                    "chart_type": "line",
+                    "data_source_name": "Apica Monitoring",
+                    "name": "go memstats - heap inuse {{kubernetes_pod_name}} query",
+                    "options": {
+                        "description": "go memstats - heap inuse {{kubernetes_pod_name}} query",
+                        "order": 8,
+                        "plot": {
+                            "errorColumn": "",
+                            "groupBy": "",
+                            "x": "Timestamp",
+                            "xLabel": "Timestamp",
+                            "y": [
+                                "value"
+                            ],
+                            "yLabel": "value"
+                        },
+                        "upperLimit": ""
+                    },
+                    "query": "go_memstats_heap_inuse_bytes{kubernetes_pod_name=~\"^$pod$\",app=~\"^$app$\"}&duration=1h&step=5m",
+                    "schema": ""
+                },
+                {
+                    "chart_type": "line",
+                    "data_source_name": "Apica Monitoring",
+                    "name": "go memstats deriv - bytes allocated {{kubernetes_pod_name}} query",
+                    "options": {
+                        "description": "go memstats deriv - bytes allocated {{kubernetes_pod_name}} query",
+                        "order": 9,
+                        "plot": {
+                            "errorColumn": "",
+                            "groupBy": "",
+                            "x": "Timestamp",
+                            "xLabel": "Timestamp",
+                            "y": [
+                                "value"
+                            ],
+                            "yLabel": "value"
+                        },
+                        "upperLimit": ""
+                    },
+                    "query": "deriv(go_memstats_alloc_bytes{kubernetes_pod_name=~\"^$pod$\",app=~\"^$app$\"}[$interval])&duration=1h&step=5m",
+                    "schema": ""
+                },
+                {
+                    "chart_type": "line",
+                    "data_source_name": "Apica Monitoring",
+                    "name": "go memstats deriv - alloc rate {{kubernetes_pod_name}} query",
+                    "options": {
+                        "description": "go memstats deriv - alloc rate {{kubernetes_pod_name}} query",
+                        "order": 10,
+                        "plot": {
+                            "errorColumn": "",
+                            "groupBy": "",
+                            "x": "Timestamp",
+                            "xLabel": "Timestamp",
+                            "y": [
+                                "value"
+                            ],
+                            "yLabel": "value"
+                        },
+                        "upperLimit": ""
+                    },
+                    "query": "rate(go_memstats_alloc_bytes_total{kubernetes_pod_name=~\"^$pod$\",app=~\"^$app$\"}[$interval])&duration=1h&step=5m",
+                    "schema": ""
+                },
+                {
+                    "chart_type": "line",
+                    "data_source_name": "Apica Monitoring",
+                    "name": "go memstats deriv - stack inuse {{kubernetes_pod_name}} query",
+                    "options": {
+                        "description": "go memstats deriv - stack inuse {{kubernetes_pod_name}} query",
+                        "order": 11,
+                        "plot": {
+                            "errorColumn": "",
+                            "groupBy": "",
+                            "x": "Timestamp",
+                            "xLabel": "Timestamp",
+                            "y": [
+                                "value"
+                            ],
+                            "yLabel": "value"
+                        },
+                        "upperLimit": ""
+                    },
+                    "query": "deriv(go_memstats_stack_inuse_bytes{kubernetes_pod_name=~\"^$pod$\",app=~\"^$app$\"}[$interval])&duration=1h&step=5m",
+                    "schema": ""
+                },
+                {
+                    "chart_type": "line",
+                    "data_source_name": "Apica Monitoring",
+                    "name": "go memstats deriv - heap inuse {{kubernetes_pod_name}} query",
+                    "options": {
+                        "description": "go memstats deriv - heap inuse {{kubernetes_pod_name}} query",
+                        "order": 12,
+                        "plot": {
+                            "errorColumn": "",
+                            "groupBy": "",
+                            "x": "Timestamp",
+                            "xLabel": "Timestamp",
+                            "y": [
+                                "value"
+                            ],
+                            "yLabel": "value"
+                        },
+                        "upperLimit": ""
+                    },
+                    "query": "deriv(go_memstats_heap_inuse_bytes{kubernetes_pod_name=~\"^$pod$\",app=~\"^$app$\"}[$interval])&duration=1h&step=5m",
+                    "schema": ""
+                },
+                {
+                    "chart_type": "line",
+                    "data_source_name": "Apica Monitoring",
+                    "name": "open fds query",
+                    "options": {
+                        "description": "open fds query",
+                        "order": 13,
+                        "plot": {
+                            "errorColumn": "",
+                            "groupBy": "",
+                            "x": "Timestamp",
+                            "xLabel": "Timestamp",
+                            "y": [
+                                "value"
+                            ],
+                            "yLabel": "value"
+                        },
+                        "upperLimit": ""
+                    },
+                    "query": "process_open_fds{kubernetes_pod_name=~\"^$pod$\",app=~\"^$app$\"}&duration=1h&step=5m",
+                    "schema": ""
+                },
+                {
+                    "chart_type": "line",
+                    "data_source_name": "Apica Monitoring",
+                    "name": "open fds deriv query",
+                    "options": {
+                        "description": "open fds deriv query",
+                        "order": 14,
+                        "plot": {
+                            "errorColumn": "",
+                            "groupBy": "",
+                            "x": "Timestamp",
+                            "xLabel": "Timestamp",
+                            "y": [
+                                "value"
+                            ],
+                            "yLabel": "value"
+                        },
+                        "upperLimit": ""
+                    },
+                    "query": "deriv(process_open_fds{kubernetes_pod_name=~\"^$pod$\",app=~\"^$app$\"}[$interval])&duration=1h&step=5m",
+                    "schema": ""
+                },
+                {
+                    "chart_type": "line",
+                    "data_source_name": "Apica Monitoring",
+                    "name": "Goroutines query",
+                    "options": {
+                        "description": "Goroutines query",
+                        "order": 15,
+                        "plot": {
+                            "errorColumn": "",
+                            "groupBy": "",
+                            "x": "Timestamp",
+                            "xLabel": "Timestamp",
+                            "y": [
+                                "value"
+                            ],
+                            "yLabel": "value"
+                        },
+                        "upperLimit": ""
+                    },
+                    "query": "go_goroutines{kubernetes_pod_name=~\"^$pod$\",app=~\"^$app$\"}&duration=1h&step=5m",
+                    "schema": ""
+                },
+                {
+                    "chart_type": "line",
+                    "data_source_name": "Apica Monitoring",
+                    "name": "GC duration quantiles query",
+                    "options": {
+                        "description": "GC duration quantiles query",
+                        "order": 16,
+                        "plot": {
+                            "errorColumn": "",
+                            "groupBy": "",
+                            "x": "Timestamp",
+                            "xLabel": "Timestamp",
+                            "y": [
+                                "value"
+                            ],
+                            "yLabel": "value"
+                        },
+                        "upperLimit": ""
+                    },
+                    "query": "go_gc_duration_seconds{kubernetes_pod_name=~\"^$pod$\",app=~\"^$app$\"}&duration=1h&step=5m",
+                    "schema": ""
+                }
+            ],
+            "title": "Go",
+            "type": "metrics"
+        }
+    ]
+}
